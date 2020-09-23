@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block titulo %}Mi pagina de prueba {%endblock titulo%} </title>
+  </head>
+  <body>
+    {%block cuerpo%}
+    <h1>template de prueba</h1>
+    <table border="2">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>apellido</th>
+          <th>Correoj</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%  for persona in personas %}
+        <tr>
+          <td>{{persona.nombre}}</td>
+          <td>{{persona.apellido}}</td>
+          <td>{{persona.correo}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {%endblock cuerpo%}
+  </body>
+</html>
