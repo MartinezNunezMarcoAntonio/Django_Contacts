@@ -7,6 +7,7 @@
   <body>
     {%block cuerpo%}
     <h1>template de prueba</h1>
+    <a href="{%url 'crear_persona'%}">crear persona</a>
     <table border="2">
       <thead>
         <tr>
@@ -17,7 +18,7 @@
         </tr>
       </thead>
       <tbody>
-        {% for persona in personas %}
+        {% for persona in object_list %}
         <tr>
           <td>{{persona.nombre}}</td>
           <td>{{persona.apellido}}</td>
