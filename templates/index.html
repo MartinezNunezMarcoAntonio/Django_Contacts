@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>{% block titulo %}Mi pagina de prueba {%endblock titulo%} </title>
+    <title>{% block titulo %}Mi pagina de prueba {%endblock titulo%}</title>
   </head>
   <body>
     {%block cuerpo%}
@@ -12,15 +12,20 @@
         <tr>
           <th>Nombre</th>
           <th>apellido</th>
-          <th>Correoj</th>
+          <th>Correo</th>
+          <th>Opciones</th>
         </tr>
       </thead>
       <tbody>
-        {%  for persona in personas %}
+        {% for persona in personas %}
         <tr>
           <td>{{persona.nombre}}</td>
           <td>{{persona.apellido}}</td>
           <td>{{persona.correo}}</td>
+          <td>
+            <a href="{%url 'editar_persona' persona.id%}">EDITAR</a>
+            <a href="{%url 'eliminar_persona' persona.id%}">ELIMINAR</a>
+          </td>
         </tr>
         {% endfor %}
       </tbody>
